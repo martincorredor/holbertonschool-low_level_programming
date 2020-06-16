@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - outputs all digits in base 10 number system using putchar
+ * main - prints Holberton
  *
- * Description: Uses a for loop to putchar all numbers from 0-9
+ * Description: Uses a Printf function to print a string
  * Return: returns 0
  */
 

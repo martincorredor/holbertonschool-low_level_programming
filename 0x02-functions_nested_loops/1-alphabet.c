@@ -1,21 +1,19 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - outputs all digits in base 10 number system using putchar
+ * print_alphabet - print the alphabet followed by a new line
  *
- * Description: Uses a for loop to putchar all numbers from 0-9
- * Return: returns 0
+ * Description: Uses the for loop to print the letters from "a" to "z"
+ * Return
  */
-
-int main(void)
+void print_alphabet(void)
 {
 int a;
 
 for (a = 'a'; a <= 'z'; a++)
 {
-putchar(a);
+_putchar(a);
 }
 
-putchar('\n');
-return (0);
+_putchar('\n');
 }
