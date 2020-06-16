@@ -1,4 +1,4 @@
-#include <stdio.h>
+# include <stdio.h>
 
 /**
  * main - outputs all digits in base 10 number system using putchar
