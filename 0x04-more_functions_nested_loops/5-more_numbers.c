@@ -6,19 +6,18 @@
  * Description: Uses a nested loop to print 10 times the numbers
  */
 
-void void more_numbers(void)
-
+void more_numbers(void)
 {
-	int b;
-
-	for (b = 0; b < 10; b++)
+	char i;
+	int counter;
+	
+	for (counter = 1; counter <= 10; counter++)
 	{
-		int a;
-
-		for (a = '0'; a <= '14'; a++)
+		for (i = 0; i <= 14; i++)
 		{
-			_putchar(a);
-
+			if (i / 10 > 0)
+				_putchar((i / 10) + '0');
+			_putchar((i % 10) + '0');
 		}
 		_putchar('\n');
 	}
