@@ -1,7 +1,6 @@
 #include "holberton.h"
 
-/*
-   *
+/**
    *reset_to_98 - entry point
    *@n: integer
    */
