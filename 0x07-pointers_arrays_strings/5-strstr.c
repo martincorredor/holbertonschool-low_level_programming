@@ -5,6 +5,7 @@
    *@haystack: string
    *@needle: string to searches in haystrack
    *Return: characters wich coincided
+   *
    */
 
 char *_strstr(char *haystack, char *needle)
