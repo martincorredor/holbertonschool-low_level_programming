@@ -2,7 +2,8 @@
 
 /**
   *factorial - print factorial of number
-  *@n number
+  *@n: number
+  *Return: 1
   *return: factorial
   */
 
