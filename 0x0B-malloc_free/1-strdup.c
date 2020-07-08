@@ -11,7 +11,7 @@
 char *_strdup(char *str)
 {
 	char *copy;
-	unsigned int i = 0;
+	int i = 0;
 	int len = 0;
 
 
@@ -28,7 +28,9 @@ char *_strdup(char *str)
 		return (NULL);
 
 	for (i = 0; i < len; i++)
+	{
 		*(copy + i) = *(str + i);
+	}
 
 	return (copy);
 
