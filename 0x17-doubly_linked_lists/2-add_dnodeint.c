@@ -40,6 +40,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
     dlistint_t *node = NULL;
 
     node = Create_node(n);
+
     if (node != NULL)
     {
         node->prev = NULL;
