@@ -1,20 +1,22 @@
 include "lists.h"
 
 /**
- * print_dlistint - Prints all the elements of a list
- * @h: header, first node  *
- * Return: size_t
- */
+  *print_dlistint - Return the number of list's nodes
+  *@h: Pointer type struct to list
+  *Return: Number of nodes
+  *
+  */
 size_t print_dlistint(const dlistint_t *h)
 {
-    size_t i = 0;
-    /*1. if the node is true*/
-    while (h)
+    /*First cretes a count of type unsigned int*/
+    /*because the function is type size_t*/
+    unsigned int number_of_nodes = 0;
+
+    while (h != NULL)
     {
-        printf("%d\n", h->n); /*2. print the value in the node*/
-        i++, h = h->next;
-        /*3. increment i(number of nodes)*/
-        /*and travel in the list*/
+        printf("%i\n", h->n);
+        h = h->next;
+        number_of_nodes++;
     }
-    return (i);
+    return (number_of_nodes)
 }
