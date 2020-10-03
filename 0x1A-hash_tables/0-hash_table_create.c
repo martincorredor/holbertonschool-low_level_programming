@@ -7,18 +7,18 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-        hash_table_t *table;
+    hash_table_t *table;
 
-        table = malloc(sizeof(hash_table_t));
-        if (table == NULL || size == 0)
-                return (NULL);
-        table->array = malloc(sizeof(void *) * size);
-        if (table->array == NULL)
-                return (NULL);
-        table->size = size;
+    table = malloc(sizeof(hash_table_t));
+    if (table == NULL || size == 0)
+        return (NULL);
+    table->array = malloc(sizeof(void *) * size);
+    if (table->array == NULL)
+        return (NULL);
+    table->size = size;
 
-        array_null_init(table);
-        return (table);
+    array_null_init(table);
+    return (table);
 }
 
 /**
@@ -27,8 +27,8 @@ hash_table_t *hash_table_create(unsigned long int size)
  */
 void array_null_init(hash_table_t *table)
 {
-        unsigned long int i;
+    unsigned long int i;
 
-        for (i = 0; i < table->size; i++)
-                table->array[i] = NULL;
+    for (i = 0; i < table->size; i++)
+        table->array[i] = NULL;
 }
