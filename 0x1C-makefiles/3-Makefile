@@ -1,0 +1,31 @@
+#_._makefile_._
+#rules:
+#all: builds your executable
+#clean: deletes all emacs and vim temporary files
+#fclean: deletes the emacs temporary files and objects files
+#re: forces recompilation of all source files
+
+#CC: The compiler to be used
+#SRC: the .c files
+#OBJ: the .o files
+#NAME: the name of the executable
+#RM: the program to deletes files
+
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC: .c=.o)
+NAME = holberton
+RM = rm
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) -f *~$(NAME)
+
+oclean:
+	$(RM) -f $(OBJ)
+
+fclean: clean oclean
+
+re: oclean all
