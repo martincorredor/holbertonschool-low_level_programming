@@ -13,18 +13,18 @@
 
 CC = gcc
 SRC = main.c holberton.c
-OBJ = $(SRC: .c=.o)
+OBJ = $(SRC:.c=.o)
 NAME = holberton
-RM = rm
+RM = rm -f
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) -f *~$(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
-	$(RM) -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 
