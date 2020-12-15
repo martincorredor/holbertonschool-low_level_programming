@@ -1,22 +1,21 @@
-include "lists.h"
+#include "lists.h"
 
 /**
- * free_dlistint - Free a dlistint_t list.
- * @head: Pointer to the head.
- *
- * Return: Nothing.
- **/
+ *free_dlistint - function that free a dlistint_t list.
+ *@head: Linked list
+ *Return: Void
+ */
+
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *list = head, *container;
+	if (!head)
+		return;
 
-	if (list)
+	while (head && head->next)
 	{
-		while (list)
-		{
-			container = list->next;
-			free(list);
-			list = container;
-		}
+		head = head->next;
+		free(head->prev);
 	}
+
+	free(head);
 }
