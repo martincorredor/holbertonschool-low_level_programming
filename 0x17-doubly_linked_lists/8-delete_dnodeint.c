@@ -1,42 +1,52 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - function that delete a node in teh index position
- * @index:index to return
- * @head:head of a list
- * Return: the new list
- */
-
+ * delete_dnodeint_at_index - Deletes the node at index of a linked list.
+ * @head: Double pointer to the head.
+ * @index: Index.
+ *
+ * Return: 1 if it succeeded, -1 if it failed.
+ **/
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-        dlistint_t *ptr = *head;
-        dlistint_t *next = NULL;
-        unsigned int i;
+	unsigned int i = 0;
+	dlistint_t *aux;
 
-        if (head == NULL || *head == NULL)
-                return (-1);
-        /*If head needs to be removed*/
-        if (index == 0)
-        {
-                *head = ptr->next;   /*Change head*/
-                free(ptr);          /* free old head*/
-                return (1);
-        }
-        /* Find previous node of the node to be deleted*/
-        for (i = 0; ptr != NULL && i < index - 1; i++)
-                ptr = ptr->next;
-
-        /* If position is more than number of nodes*/
-        if (ptr == NULL || ptr->next == NULL)
-                return (-1);
-        /* Node temp->next is the node to be deleted */
-        /* Store pointer to the next of node to be deleted*/
-        next = ptr->next->next;
-
-        /* Unlink the node from linked list*/
-        free(ptr->next);
-
-        ptr->next = next;
-        return (-1);
+	if (*head == NULL || head == NULL)
+		return (-1);
+	aux = *head;
+	if (index == 0 && (*head)->next == NULL)
+	{
+		free(*head);
+		*head = NULL;
+		return (1);
+	}
+	else if (index == 0 && (*head)->next != NULL)
+	{
+		(*head) = (*head)->next;
+		free((*head)->prev);
+		(*head)->prev = NULL;
+		return (1);
+	}
+	while (aux)
+	{
+		if (i == index - 1 && aux->next != NULL)
+		{
+			aux->next = aux->next->next;
+			free(aux->next->prev);
+			aux->next->prev = aux;
+			return (1);
+		}
+		else if (i == index - 1 && aux->next == NULL)
+		{
+			free(aux->next);
+			aux->next = NULL;
+			return (1);
+		}
+		aux = aux->next;
+		i++;
+	}
+	if (index > i)
+		return (-1);
+	return (-1);
 }
-
